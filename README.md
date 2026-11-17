@@ -12,13 +12,10 @@
 
 ---
 
-## 🎬 Video Tutorial & Interactive Walkthrough
+## 📸 Project Preview
 
 <div align="center">
-  <a href="https://www.youtube.com/results?search_query=itzxsahil+render+chrome+novnc">
-    <img src="assets/tutorial-showcase.svg" width="100%" alt="Video Tutorial Showcase" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
-  </a>
-  <p><em>▶️ <strong>Interactive Project Tutorial</strong> — Click the player above to watch full setup guide &amp; demonstration!</em></p>
+  <img src="assets/project-banner.svg" width="100%" alt="Project Preview" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);" />
 </div>
 
 ---
@@ -29,10 +26,10 @@ Containerized official **Google Chrome Stable** running on an Ubuntu virtual des
 
 ---
 
-## 🏗️ System Architecture & Data Flow
+# 🏗️ System Architecture & Data Flow
 
 <div align="center">
-  <img src="assets/architecture.svg" width="100%" alt="Architecture Diagram" style="border-radius: 12px;" />
+  <img src="assets/architecture.svg" width="100%" alt="Architecture Diagram" style="border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.4);" />
 </div>
 
 <br>
@@ -52,8 +49,7 @@ A virtual X11 frame buffer runs Google Chrome with hardware acceleration fallbac
 ```bash
 docker build -t render-chrome-novnc .
 docker run -p 6080:6080 render-chrome-novnc
-```
-Open `http://localhost:6080` in your web browser.
+```\nOpen `http://localhost:6080` in your web browser.
 
 ---
 
