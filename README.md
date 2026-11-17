@@ -1,35 +1,58 @@
-# URL-Chrome Docker (Render & Railway Production Ready)
+<h1 align="center">🌐 Cloud Chrome noVNC (Render & Railway)</h1>
 
-This directory contains the production-ready Docker configuration for running Google Chrome in a cloud container with noVNC web access on Render or Railway.
+<p align="center">
+  <a href="https://github.com/itz-spidy">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&pause=1000&color=4285F4&center=true&vCenter=true&width=900&lines=Google+Chrome+Desktop+in+Docker+with+noVNC;Production+Ready+for+Render+%26+Railway;Dynamic+%24PORT+Binding+%7C+Xvfb+%7C+x11vnc;Direct+Root+Redirect+to+vnc.html" alt="Typing SVG" />
+  </a>
+</p>
 
----
-
-## 🌟 Key Features & Improvements
-
-1. **Dynamic `$PORT` Support**:
-   - Render dynamically sets `$PORT` (typically `10000`).
-   - `start.sh` automatically uses `LISTEN_PORT="${PORT:-6080}"`, so Render health checks succeed immediately.
-
-2. **Zero-Click Root `/` noVNC Redirect**:
-   - Symlinks `/usr/share/novnc/vnc.html` to `/usr/share/novnc/index.html`.
-   - Accessing `https://<service-name>.onrender.com` opens Chrome directly without typing `/vnc.html`.
-
-3. **Dual Access (noVNC Web GUI + SSHX Terminal)**:
-   - Starts Xvfb, x11vnc, Google Chrome, and websockify.
-   - Also launches `sshx` so you have both graphical browser access and web terminal access!
+<p align="center">
+  <img src="https://img.shields.io/badge/Google%20Chrome-Stable-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white">
+  <img src="https://img.shields.io/badge/noVNC-HTML5%20Web-00B4D8?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Docker-Ubuntu%2024.04-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+  <img src="https://img.shields.io/badge/Railway%20%26%20Render-Ready-7928CA?style=for-the-badge">
+</p>
 
 ---
 
-## 🚀 How to Push to GitHub
+## 🎬 Video Tutorial & Browser Streaming Preview
 
-To create a new repository (e.g. `url-chrome`) on your GitHub:
+<div align="center">
+  <a href="https://www.youtube.com/results?search_query=docker+chrome+novnc+render+railway">
+    <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
+    <br><br>
+    <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="700" alt="Cloud Chrome in Browser" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);" />
+    <br><br>
+    <img src="https://img.shields.io/badge/%E2%96%B6%EF%B8%8F%20WATCH%20TUTORIAL-BROWSER%20DEPLOYMENT%20GUIDE-4285F4?style=for-the-badge&logo=youtube&logoColor=white" />
+  </a>
+</div>
+
+---
+
+# 🚀 Key Features
+
+- 🖥️ **Full Google Chrome Stable**: Installed directly from the official Google deb repository.
+- ⚡ **Dynamic `$PORT` Support**: Automatically detects and binds to Render / Railway port mappings.
+- 🔗 **Automatic Redirect**: Visiting `/` automatically redirects straight to `/vnc.html` for an instant GUI experience.
+- 🛡️ **Container Optimized**: Flags `--no-sandbox`, `--disable-dev-shm-usage`, and `--disable-gpu` configured for smooth execution.
+
+---
+
+# 📦 Docker Quickstart
 
 ```bash
-cd "C:\Users\SAHIL\.gemini\antigravity\scratch\url-chrome-automation\url-chrome-docker"
-git init
-git add .
-git commit -m "Initial commit for URL Chrome container"
-git branch -M main
-git remote add origin https://github.com/itz-spidy/url-chrome.git
-git push -u origin main
+# Clone
+git clone https://github.com/itz-spidy/render-chrome-novnc.git
+cd render-chrome-novnc
+
+# Build & Run
+docker build -t render-chrome-novnc .
+docker run -p 6080:6080 render-chrome-novnc
 ```
+
+Open `http://localhost:6080` in your web browser!
+
+---
+
+# 👤 Author
+Maintained by [@itz-spidy](https://github.com/itz-spidy).
